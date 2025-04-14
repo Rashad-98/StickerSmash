@@ -1,9 +1,14 @@
 import { Text, View, StyleSheet } from "react-native";
+import { Image } from "expo-image";
+
+const placeholderImage = require("../../assets/images/background-image.png");
 
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello</Text>
+      <View style={styles.imageContainer}>
+        <Image source={placeholderImage} style={styles.image} />
+      </View>
     </View>
   );
 }
@@ -11,24 +16,15 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#000",
   },
-  text: {
-    color: "#fff",
-    fontSize: 20,
-    fontWeight: "bold",
+  image: {
+    width: 320,
+    height: 440,
+    borderRadius: 18,
   },
-  button: {
-    marginTop: 20,
-    padding: 10,
-    backgroundColor: "#007AFF",
-    borderRadius: 5,
-    color: "#fff",
-    textAlign: "center",
-    width: 200,
-    fontSize: 16,
-    fontWeight: "bold",
-  },
+  imageContainer:{
+    flex: 1
+  }
 });
